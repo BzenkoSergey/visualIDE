@@ -1,0 +1,11 @@
+<ul *ngIf="tree.length">
+    <li *ngFor="let child of tree">        
+        <span (click)="selectFile(child)">{{child.name}}</span>
+
+        <ul *ngIf="child.children?.length">
+            <li *ngFor="let child of child.children">
+                <span (click)="selectFile(child)">{{child.name}}</span>
+            </li>
+        </ul>
+    </li>
+</ul>

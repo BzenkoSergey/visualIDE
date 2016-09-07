@@ -1,0 +1,44 @@
+<div class="d">file name: {{file.name}}</div>
+<div>file path: {{file.path}}</div>
+<p>
+    class {{manifest.name}}
+</p>
+
+<hr>
+
+constructorDef
+<div *ngFor="let parameter of manifest.constructorDef.parameters">
+    === constructorDef param ===
+    <div>name: {{parameter.name}}</div>
+    <div>type: {{parameter.type}}</div>
+    <div>optional: {{parameter.optional}}</div>
+    <div>defaultValue: {{parameter.defaultValue}}</div>
+</div>
+
+<hr>
+
+class properties
+<div *ngFor="let property of manifest.properties">
+    === class property ===
+    <div>name: {{property.name}}</div>
+    <div>type: {{property.type}}</div>
+    <div>scope: {{property.scope}}</div>
+    <div>defaultValue: {{property.defaultValue}}</div>
+</div>
+
+<hr>
+
+class methods
+<div *ngFor="let method of manifest.methods">
+    === class method ===
+    <div>name: {{method.name}}</div>
+    <div>return: {{method.return}}</div>
+    <div>scope: {{method.scope}}</div>
+    <div *ngFor="let param of method.parameters">
+        --- method param ---
+        <div>name: {{param.name}}</div>
+        <div>type: {{param.type}}</div>
+        <div>optional: {{param.optional}}</div>
+        <div>defaultValue: {{param.defaultValue}}</div>
+    </div>
+</div>

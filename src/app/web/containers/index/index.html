@@ -1,0 +1,14 @@
+index.html
+
+<div style="float: right">
+    <inspector
+        *ngIf="inspectedFile" 
+        [file]="inspectedFile">
+    </inspector>
+</div>
+
+<div style="float: left">
+    <project-files-tree 
+        (changeFile)="setInspectedFile($event)">
+    </project-files-tree>
+</div>
